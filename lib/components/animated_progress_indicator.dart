@@ -45,7 +45,7 @@ class AnimatedCircularProgressIndicator extends StatelessWidget {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: Theme.of(context).textTheme.subtitle2,
-        ),
+        )
       ],
     );
   }
@@ -80,7 +80,9 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
                 Text((value * 100).toInt().toString() + "%"),
               ],
             ),
-            SizedBox(height: defaultPadding / 2),
+            SizedBox(
+              height: defaultPadding / 2,
+            ),
             LinearProgressIndicator(
               value: value,
               color: primaryColor,

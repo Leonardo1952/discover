@@ -22,9 +22,7 @@ class MainScreen extends StatelessWidget {
                 //agora cada um leva 75%
                 //agora cada um leva 2+7 =9
                 flex: 2,
-                child: Container(
-                  color: Colors.white,
-                ),
+                child: SideMenu(),
               ),
               Expanded(
                 flex: 7,
@@ -39,3 +37,4 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
+

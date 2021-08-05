@@ -12,26 +12,29 @@ class MyInfo extends StatelessWidget {
       child: Container(
         color: Color(0xFF242430),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Spacer(flex: 2),
+            Spacer(),
             CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage("assets/images/IMG_7344.jpg"),
+              backgroundImage: AssetImage("assets/images/myphoto.jpg"),
             ),
             Spacer(),
             Text(
-              "Abu Anwar",
+              "Leonardo Oliveira",
               style: Theme.of(context).textTheme.subtitle2,
             ),
             Text(
-              "Flutter Developer & Founder of \n The Flutter Way",
+              "Desenvolvedor Flutter & Estudante \n Universidade Federal de Alagoas",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.w200,
                 height: 1.5,
               ),
             ),
-            Spacer(flex: 2),
+            Spacer(
+              flex: 2,
+            ),
           ],
         ),
       ),
