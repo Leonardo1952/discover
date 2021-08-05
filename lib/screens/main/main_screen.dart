@@ -12,42 +12,24 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // We hide the appbar on desktop
-      appBar: Responsive.isDesktop(context)
-          ? null
-          : AppBar(
-              backgroundColor: bgColor,
-              leading: Builder(
-                builder: (context) => IconButton(
-                  onPressed: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                  icon: Icon(Icons.menu),
-                ),
-              ),
-            ),
-      drawer: SideMenu(),
       body: Center(
         child: Container(
           constraints: BoxConstraints(maxWidth: maxWidth),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (Responsive.isDesktop(context))
-                Expanded(
-                  flex: 2,
-                  child: SideMenu(),
+              //agora cada um leva 50%
+              Expanded(
+                //agora cada um leva 75%
+                //agora cada um leva 2+7 =9
+                flex: 2,
+                child: Container(
+                  color: Colors.white,
                 ),
-              SizedBox(width: defaultPadding),
+              ),
               Expanded(
                 flex: 7,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      ...children,
-                      // our footer
-                    ],
-                  ),
+                child: Container(
+                  color: Colors.blue,
                 ),
               ),
             ],
