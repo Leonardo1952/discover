@@ -1,4 +1,6 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_profile/constants.dart';
 import 'package:flutter_profile/screens/main/main_screen.dart';
 
 import 'components/heighlights.dart';
@@ -12,12 +14,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainScreen(
-      children: [
-        HomeBanner(),
-        HighLightsInfo(),
-        MyProjects(),
-        Recommendations(),
-      ],
+      children: [HomeBanner()],
     );
   }
 }

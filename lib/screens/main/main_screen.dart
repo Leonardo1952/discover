@@ -24,10 +24,15 @@ class MainScreen extends StatelessWidget {
                 flex: 2,
                 child: SideMenu(),
               ),
+              SizedBox(width: defaultPadding),
               Expanded(
                 flex: 7,
-                child: Container(
-                  color: Colors.blue,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ...children,
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -37,4 +42,3 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
-
