@@ -12,7 +12,7 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 3,
+      aspectRatio: Responsive.isMobile(context) ? 2.5 : 3,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -20,9 +20,7 @@ class HomeBanner extends StatelessWidget {
             "assets/images/bg.jpeg",
             fit: BoxFit.cover,
           ),
-          Container(
-            color: darkColor.withOpacity(0.66),
-          ),
+          Container(color: darkColor.withOpacity(0.66)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
             child: Column(
@@ -31,28 +29,35 @@ class HomeBanner extends StatelessWidget {
               children: [
                 Text(
                   "Descubra o meu incrível \nespaço de arte!",
-                  style: Theme.of(context).textTheme.headline3!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                  style: Responsive.isDesktop(context)
+                      ? Theme.of(context).textTheme.headline3!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          )
+                      //Muda o temanho da letra do cabeçalho diferenciando do desktop e celular
+                      : Theme.of(context).textTheme.headline5!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                 ),
+                if (Responsive.isMobileLarge(context))
+                  const SizedBox(height: defaultPadding / 2),
                 MybuildAnimatedText(),
-                SizedBox(
-                  height: defaultPadding,
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: defaultPadding * 2,
-                        vertical: defaultPadding),
-                    backgroundColor: primaryColor,
+                SizedBox(height: defaultPadding),
+                if (!Responsive.isMobileLarge(context))
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: defaultPadding * 2,
+                          vertical: defaultPadding),
+                      backgroundColor: primaryColor,
+                    ),
+                    child: Text(
+                      "Explore agora",
+                      style: TextStyle(color: darkColor),
+                    ),
                   ),
-                  child: Text(
-                    "Explore agora",
-                    style: TextStyle(color: darkColor),
-                  ),
-                ),
               ],
             ),
           )
@@ -71,30 +76,46 @@ class MybuildAnimatedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTextStyle(
       style: Theme.of(context).textTheme.subtitle1!,
+      maxLines: 1,
       child: Row(
         children: [
-          FlutterCodedText(),
-          SizedBox(width: defaultPadding / 2),
+          if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
+          if (!Responsive.isMobileLarge(context))
+            SizedBox(width: defaultPadding / 2),
           Text("Eu construo "),
-          AnimatedTextKit(animatedTexts: [
-            TyperAnimatedText(
-              "páginas web responsivas e aplicativo móvel.",
-              speed: Duration(milliseconds: 60),
-            ),
-            TyperAnimatedText(
-              "UI completa de aplicativo de e-Commerce.",
-              speed: Duration(milliseconds: 60),
-            ),
-            TyperAnimatedText(
-              "aplicativo de bate-papo com tema dark e light.",
-              speed: Duration(milliseconds: 60),
-            ),
-          ]),
-          SizedBox(width: defaultPadding / 2),
-          FlutterCodedText(),
+          Responsive.isMobile(context)
+              ? Expanded(child: AnimatedText())
+              : AnimatedText(),
+          if (!Responsive.isMobileLarge(context))
+            SizedBox(width: defaultPadding / 2),
+          if (!Responsive.isMobileLarge(context)) FlutterCodedText(),
         ],
       ),
     );
+  }
+}
+
+class AnimatedText extends StatelessWidget {
+  const AnimatedText({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedTextKit(animatedTexts: [
+      TyperAnimatedText(
+        "páginas web responsivas e aplicativo móvel.",
+        speed: Duration(milliseconds: 60),
+      ),
+      TyperAnimatedText(
+        "UI completa de aplicativo de e-Commerce.",
+        speed: Duration(milliseconds: 60),
+      ),
+      TyperAnimatedText(
+        "aplicativo de bate-papo com tema dark e light.",
+        speed: Duration(milliseconds: 60),
+      ),
+    ]);
   }
 }
 
