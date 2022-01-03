@@ -1,25 +1,53 @@
-# Responsive and Animated Portfolio Website & App - Flutter UI
+# Discover :page_facing_up: :computer:
 
-## [Live Preview](https://abuanwar072.github.io/profile/#/)
+Discover foi um projeto realizado com o intuito de aprendizagem e prática da linguagem de programação Dart em conjunto com o kit de desenvolvimento de interfaces Flutter. O projeto consistiu em criar um site de portfólio/currículo online de forma responsiva, capaz de um unico código se apresentar bem em diferentes dispositivos e tamanhos de tela. Para realização da mesma utilizou-se bibliotecas de animações e fontes do google. O mesmo se deu com um acompanhamento de dos vídeos que podem ser acessados através dos links: https://www.youtube.com/watch?v=G_ZIJseX6AU&ab_channel=TheFlutterWay e https://www.youtube.com/watch?v=KopZ01vN4uE&ab_channel=TheFlutterWay com este projeto e curso foi possível praticar:
 
-## [Watch it on YouTube](https://youtu.be/G_ZIJseX6AU)
+- Responsive feita a mão
+- Animações de texto
+- Imagens do tipo SVG
+- Componetização
+- E muitos outros
 
-**Packages we are using:**
 
-- flutter_svg: [link](https://pub.dev/packages/flutter_svg)
-- goole_fonts: [link](https://pub.dev/packages/google_fonts)
-- animated_text_kit: [link](https://pub.dev/packages/animated_text_kit)
+## Um pouco do resultado: :trophy:
 
-**Fonts**
+![Gif](https://github.com/Leonardo1952/discover/blob/master/gif.gif)
 
-- Poppins [link](https://fonts.google.com/specimen/Poppins)
+## Ferramentas :hammer_and_wrench:	
 
-Today we will show you how you can create your developer portfolio website and app using flutter. We also add animation which works perfectly on mobile and the web. 
+- Visual Studio
+- Google Chrome
+- Android Studio
 
-### Responsive and Animated Portfolio Website & App Final UI
 
-![Preview](/gif.gif)
+## Tecnologias :desktop_computer:
 
-![App UI](/ui.png)
+As tecnologias empregadas foram a linguagem de progrmação Dart em conjunto com o kit de desenvolvimento de interfaces Flutter, junto com o editor de código fonte VisualStudio e o repositório GitHub para armazanamento e compartilhamento da atividade.
 
-Este projeto tem o intuito de praticar a parte de animações e responsividade 
+
+## Instalação e compilação
+
+Para executar este projeto em seu computador se faz nescessário a clonagem do mesmo e a instalação do Flutter em sua máquina
+
+A instalação pode ser feita através do comando:
+
+```bash
+sudo snap install flutter --classic
+```
+Após a instalação basta executar o projeto através de um editor de código fonte (no visual studio basta precionar a tecla f5).
+
+
+## Links :link:
+
+Segue aqui alguns links importantes para construção dessa atividade
+
+| Plugin | README |
+| ------ | ------ |
+| Flutter | https://flutter.dev/ |
+| Repositório GitHub | https://github.com/Leonardo1952/instagran_responsive |
+| Visual Studio Code | https://code.visualstudio.com/ |
+
+
+## Contato :email:
+
+Email: lo88980@gmail.com
